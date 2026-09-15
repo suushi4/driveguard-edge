@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: driveguard-fullstack
+    runtime: node
+    plan: free
+    buildCommand: echo "No build required"
+    startCommand: node server.mjs
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
